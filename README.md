@@ -16,6 +16,7 @@ Notes, cheat sheets, and command usage for specific tools used in penetration te
 
 - [Nmap](./02_Tools/Nmap.md) – Network mapping, port scanning, service detection.
 - [Metasploit](./02_Tools/Metasploit.md) – Framework usage, module examples, reverse shells.
+- [John](./02_Tools/John.md) – Extensive password cracking tool.
 
 ---
 

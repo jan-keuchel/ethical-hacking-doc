@@ -4,7 +4,7 @@ Welcome to my personal notes on Pentesting and Ethical Hacking. This repository 
 
 ---
 
-## 📚 Structure Overview
+## 💻 Structure Overview
 
 ### 1. [Theory/](./Theory/)
 Foundational knowledge and background concepts.
@@ -19,6 +19,6 @@ Notes, cheat sheets, and command usage for specific tools used in penetration te
 
 ---
 
-## 🚧 Work in Progress
+## 🧪 Work in Progress
 
 I'm actively expanding this repository.

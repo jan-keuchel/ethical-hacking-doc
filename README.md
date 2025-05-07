@@ -6,16 +6,16 @@ Welcome to my personal notes on Pentesting and Ethical Hacking. This repository 
 
 ## 💻 Structure Overview
 
-### 1. [Theory/](./Theory/)
+### 1. [Theory/](./01_Theory/)
 Foundational knowledge and background concepts.
 
-- [Cryptography](./Theory/Crypto.md) – Basics of encryption, hashing, and common cryptographic flaws.
+- [Cryptography](./01_Theory/Cryptography.md) – Basics of encryption, hashing, and common cryptographic flaws.
 
-### 2. [Tools/](./Tools/)
+### 2. [Tools/](./02_Tools/)
 Notes, cheat sheets, and command usage for specific tools used in penetration testing.
 
-- [Nmap](./Tools/Nmap.md) – Network mapping, port scanning, service detection.
-- [Metasploit](./Tools/Metasploit.md) – Framework usage, module examples, reverse shells.
+- [Nmap](./02_Tools/Nmap.md) – Network mapping, port scanning, service detection.
+- [Metasploit](./02_Tools/Metasploit.md) – Framework usage, module examples, reverse shells.
 
 ---
 

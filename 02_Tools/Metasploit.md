@@ -36,7 +36,7 @@ msfupdate           # Update Metasploit
 ```bash
 search <term>                 # Search for modules
 use <module>                  # Use a specific module
-info                         # Get info on the module
+info                          # Get info on the module
 show options                  # Show required options
 set <opt> <val>               # Set value for an option
 unset <opt>                   # Unset an option
@@ -128,7 +128,7 @@ Other useful auxiliaries:
 ## Database Usage
 
 ```bash
-db_status                # Check DB connection
+db_status               # Check DB connection
 workspace -a <name>     # Add new workspace
 workspace <name>        # Switch workspace
 hosts                   # Show scanned hosts

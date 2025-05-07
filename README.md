@@ -14,6 +14,7 @@ Foundational knowledge and background concepts.
 ### 2. [Tools/](./02_Tools/)
 Notes, cheat sheets, and command usage for specific tools used in penetration testing.
 
+- [Nmap](./02_Tools/OnlineTools.md) – Collection of usefull oneline tools.
 - [Nmap](./02_Tools/Nmap.md) – Network mapping, port scanning, service detection.
 - [Metasploit](./02_Tools/Metasploit.md) – Framework usage, module examples, reverse shells.
 - [John](./02_Tools/John.md) – Extensive password cracking tool.

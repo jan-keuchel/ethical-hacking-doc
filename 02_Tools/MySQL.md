@@ -3,16 +3,9 @@
 ## Table of Contents
 
 * [Getting Started](#getting-started)
-* [Core Components](#core-components)
-* [Common Commands](#common-commands)
-* [Modules](#modules)
-* [Payloads](#payloads)
-* [Meterpreter Basics](#meterpreter-basics)
-* [Post Exploitation](#post-exploitation)
-* [Auxiliary Modules](#auxiliary-modules)
-* [Database Usage](#database-usage)
-* [Useful Tips](#useful-tips)
-
+* [Database Statements](#database-statements)
+* [Table Statements](#table-statements)
+* [Examples](#examples)
 ---
 
 ## Getting Started

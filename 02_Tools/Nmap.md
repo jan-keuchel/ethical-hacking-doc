@@ -51,7 +51,7 @@ nmap scanme.nmap.org
 ## Service and Version Detection
 
 ```bash
-nmap -sV <target> \\
+nmap -sV <target>
 nmap -sV <target> --version-intensity [0-9]
 ```
 
@@ -99,6 +99,7 @@ nmap -A <target>
 * **--script \<name/category>** : Run specific scripts
 * **--script-args <args>** : Provide arguments to scripts
 * **--script-help <script>** : Show script description
+* Scripts are stored at `/usr/share/nmap/scritps`
 
 ## Other information
 

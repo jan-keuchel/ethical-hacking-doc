@@ -39,7 +39,7 @@ nmap scanme.nmap.org
 * **-sA** : ACK scan - check for ports unfiltered by the firewall
 * **-sW** : window scan - check for ports unfiltered by the firewall
 
-**Note:** ACK and the window scan reveal if a port is not filtered by a firewall. That doesn't mean the service running on that port is actively listening.
+**Note :** ACK and the window scan reveal if a port is not filtered by a firewall. That doesn't mean the service running on that port is actively listening.
 
 ## Port Scanning Techniques
 
@@ -51,9 +51,11 @@ nmap scanme.nmap.org
 ## Service and Version Detection
 
 ```bash
-nmap -sV <target>
+nmap -sV <target> \\
+nmap -sV <target> --version-intensity [0-9]
 ```
 
+* This forces nmap to complete the 3-Way Handshake
 * Detect service versions
 * Combine with `-p` to scan specific ports
 
@@ -77,7 +79,7 @@ nmap -A <target>
 
 ## Firewall Evasion and Spoofing
 
-* **-D \<decoy1,decoy2,...>** : Decoy scanning
+* **-D \<decoy1,decoy2,RND,RND,ME...>** : Decoy scanning, RND for random \<IP\>, \<ME\> for attacker IP
 * **-S <IP>** : Spoof source IP
 * **--spoof-mac <mac>** : Spoof MAC address (e.g., --spoof-mac Apple)
 * **-f** : Fragment packets
@@ -97,6 +99,10 @@ nmap -A <target>
 * **--script \<name/category>** : Run specific scripts
 * **--script-args <args>** : Provide arguments to scripts
 * **--script-help <script>** : Show script description
+
+## Other information
+
+* **--reason** : List how the state of the port was determined
 
 Examples:
 

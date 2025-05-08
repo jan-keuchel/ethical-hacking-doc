@@ -47,3 +47,8 @@ A curated list of useful online tools, search engines, documentations, and utili
 
 * **All TOR Exit Nodes List** – [check.torproject.org/torbulkexitlist](https://check.torproject.org/torbulkexitlist)
 * **TOR Exit Address Info** – [check.torproject.org/exit-addresses](https://check.torproject.org/exit-addresses)
+
+## Obfuscation
+
+* **JavaScript Obfuscator** - [codebeautify.org/javascript-obfuscator](https://codebeautify.org/javascript-obfuscator)
+* **Deobfuscator** - [obf-io.deobfuscate.io/](https://obf-io.deobfuscate.io/)

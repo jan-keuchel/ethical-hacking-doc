@@ -36,11 +36,14 @@ nmap scanme.nmap.org
 * **-sN** : TCP Null scan
 * **-sF** : FIN scan
 * **-sX** : Xmas scan
-* **-sA** : ACK scan
+* **-sA** : ACK scan - check for ports unfiltered by the firewall
+* **-sW** : window scan - check for ports unfiltered by the firewall
+
+**Note:** ACK and the window scan reveal if a port is not filtered by a firewall. That doesn't mean the service running on that port is actively listening.
 
 ## Port Scanning Techniques
 
-* **-p <ports>** : Scan specific ports (e.g., -p 22,80,443 or -p- for all 65535)
+* **-p <ports>** : Scan specific ports (e.g., -p 22,80,443, -p20-80 or -p- for all 65535)
 * **-F** : Fast scan (default top 100 ports)
 * **--top-ports <n>** : Scan top N ports
 * **--port-ratio <ratio>** : Scan ports more likely to be open
@@ -141,5 +144,4 @@ nmap --script vuln 192.168.0.1
 ## Notes
 
 * Run as root or with sudo to enable some scans (e.g., SYN, OS detection)
-* Use responsibly and only on systems you are authorized to test
 * Combine options for more tailored scans

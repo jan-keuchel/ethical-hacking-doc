@@ -52,3 +52,7 @@ A curated list of useful online tools, search engines, documentations, and utili
 
 * **JavaScript Obfuscator** - [codebeautify.org/javascript-obfuscator](https://codebeautify.org/javascript-obfuscator)
 * **Deobfuscator** - [obf-io.deobfuscate.io/](https://obf-io.deobfuscate.io/)
+
+## Shells
+
+* **Reverse Shell Cheatsheet, Pentestmonkey** - [obf-io.deobfuscate.io/](https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)

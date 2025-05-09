@@ -9,7 +9,7 @@ Welcome to my personal notes on Pentesting and Ethical Hacking. This repository 
 ### 1. [Theory/](./01_Theory/)
 Foundational knowledge and background concepts.
 
-- [Cryptography](./01_Theory/Cryptography.md) – Basics of encryption, hashing, and common cryptographic flaws.
+- [Shells](./01_Theory/Shells.md) – Basics Types of shells and some examples.
 
 ### 2. [Tools/](./02_Tools/)
 Notes, cheat sheets, and command usage for specific tools used in penetration testing.

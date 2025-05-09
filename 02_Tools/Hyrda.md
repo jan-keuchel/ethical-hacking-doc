@@ -1,8 +1,8 @@
-# 🐍 THC-Hydra Cheatsheet
+# THC-Hydra Cheatsheet
 
-## 🧠 Basics
+## Basics
 
-### 🆘 Help
+### Help
 
 ```bash
 hydra -h
@@ -10,7 +10,7 @@ hydra -h
 
 ---
 
-## 🛠️ Syntax
+## Syntax
 
 ```bash
 hydra [OPTIONS] -L [userlist] -P [passlist] [PROTOCOL]://[TARGET]
@@ -27,7 +27,7 @@ hydra [OPTIONS] -L [userlist] -P [passlist] [PROTOCOL]://[TARGET]
 
 ---
 
-## 🧪 Examples
+## Examples
 
 ### SSH
 
@@ -64,7 +64,7 @@ hydra -L users.txt -P passwords.txt smb://192.168.1.100
 
 ---
 
-## 💡 Useful Options
+## Useful Options
 
 | Option | Description                          |
 | ------ | ------------------------------------ |
@@ -76,7 +76,7 @@ hydra -L users.txt -P passwords.txt smb://192.168.1.100
 
 ---
 
-## 🔌 Supported Services (Partial List)
+## Supported Services (Partial List)
 
 * `ssh` – Secure Shell
 * `ftp` – File Transfer Protocol
@@ -91,15 +91,15 @@ Run `hydra -U` to see the full list of supported modules.
 
 ---
 
-## 🧱 Tips for Effective Use
+## Tips for Effective Use
 
-* 🛡️ Avoid using `-t` (tasks/parallel threads) too high, especially on slower or rate-limited services.
-* 🧪 Always test with a small user/password list to verify syntax before large brute-force runs.
-* 🔍 Monitor network usage — Hydra is noisy and can trigger IDS/IPS.
+* Avoid using `-t` (tasks/parallel threads) too high, especially on slower or rate-limited services.
+* Always test with a small user/password list to verify syntax before large brute-force runs.
+* Monitor network usage — Hydra is noisy and can trigger IDS/IPS.
 
 ---
 
-## 📝 Logging Results
+## Logging Results
 
 ```bash
 hydra -L users.txt -P passwords.txt -o results.txt ssh://192.168.1.100
@@ -107,7 +107,7 @@ hydra -L users.txt -P passwords.txt -o results.txt ssh://192.168.1.100
 
 ---
 
-## 🧮 Wordlists
+## Wordlists
 
 Try using built-in or custom wordlists:
 
@@ -117,7 +117,7 @@ Try using built-in or custom wordlists:
 
 ---
 
-## 📚 References
+## References
 
 * [Hydra GitHub Repository](https://github.com/vanhauser-thc/thc-hydra)
 * [THC Hydra Usage Guide (HackTricks)](https://book.hacktricks.xyz/pentesting/password-cracking/thc-hydra)

@@ -20,6 +20,7 @@ Notes, cheat sheets, and command usage for specific tools used in penetration te
 - [MySQL](./02_Tools/MySQL.md) – Shell to query a database.
 - [John](./02_Tools/John.md) – Extensive password cracking tool.
 - [Hyrda](./02_Tools/Hyrda.md) – Brute force online password cracking program.
+- [Gobuster](./02_Tools/Gobuster.md) – Tool for web enumeration.
 
 ---
 

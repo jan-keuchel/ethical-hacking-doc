@@ -10,7 +10,7 @@ Welcome to my personal notes on Pentesting and Ethical Hacking. This repository 
 Foundational knowledge and background concepts.
 
 - [Shells](./01_Theory/Shells.md) – Basics Types of shells and some examples.
-- [Basic Webpage assessment](./01_Theory/How_to_assess_a_webpage.md.md) – Quick walkthrough of the most basic things to do when testing a webpage.
+- [Basic Webpage assessment](./01_Theory/How_to_assess_a_webpage.md) – Quick walkthrough of the most basic things to do when testing a webpage.
 
 ### 2. [Tools/](./02_Tools/)
 Notes, cheat sheets, and command usage for specific tools used in penetration testing.

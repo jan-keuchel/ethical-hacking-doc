@@ -2,7 +2,7 @@
 
 ## 1. Exploring the Webpage
 
-* Look through the webpageg and note down all the different pages along their usecase
+* Look through the webpage and note down all the different pages along their usecase
 
 ---
 
@@ -21,7 +21,7 @@ Look for specific files such as ...
 
 ---
 
-## Google Dorking
+## 4. Google Dorking
 
 | Filter    | Example              | Description                                   |
 |-----------|----------------------|-----------------------------------------------|
@@ -35,3 +35,7 @@ Look for specific files such as ...
 ## Gobuster for content discovery
 
 [Gobuster](../02_Tools/Gobuster.md)
+
+* When an SSL/TLS certificate is issued that process is reported in a CT-Log (Certificate Transparency). This can be used to discover subdomains. View logged subdomains at [crt.sh](https://crt.sh/?q=tryhackme.com).
+* dnsrecon : Brute force DNS requests to disover subdomains.
+* sublist3r : Brute force DNS requests to disover subdomains.

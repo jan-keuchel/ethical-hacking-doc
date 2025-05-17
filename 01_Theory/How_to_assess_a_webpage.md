@@ -32,10 +32,9 @@ Look for specific files such as ...
 
 [More Google Dorking examples](https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06)
 
-## Gobuster for content discovery
+## Content discovery and subdomains
 
-[Gobuster](../02_Tools/Gobuster.md)
-
+* [Gobuster](../02_Tools/Gobuster.md)
 * When an SSL/TLS certificate is issued that process is reported in a CT-Log (Certificate Transparency). This can be used to discover subdomains. View logged subdomains at [crt.sh](https://crt.sh/?q=tryhackme.com).
 * dnsrecon : Brute force DNS requests to disover subdomains.
 * sublist3r : Brute force DNS requests to disover subdomains.

@@ -26,6 +26,7 @@
 * `netstat -a` : Show all ports and established connections
 * `netstat -a[tu]` : Show all ports and established connections using TCP/UDP
 * `netstat -l` : Show all ports in listening mode and established connections. These ports are ready to accept incomming connections.
+* `getcap -r / 2>/dev/null` : List files with capabilities set. Search GTFObins for exploits.
 
 ### find command
 
@@ -46,3 +47,4 @@
 * `find / -perm -222 -type d 2>/dev/null` : Find world-writeable folders
 * `find / -perm -o w -type d 2>/dev/null` : Find world-writeable folders
 * `find / -perm -o x -type d 2>/dev/null` : Find world-executable folders
+* `find / -type f -perm -04000 -ls 2>/dev/null` : List files that have SUID or SGID bits set

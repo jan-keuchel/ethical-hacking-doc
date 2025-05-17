@@ -2,21 +2,22 @@
 
 ## Usefull commands and files
 
-| Command               | Usecase                                       |
-|---------------------- | --------------------------------------------- |
-| `hostname`            | Displays the hostname of the target machine   |
-| `uname -a`            | Print system information and details about the kernel   |
-| `/proc/version`       | Print system information and details about the kernel   |
-| `/etc/issue`          | Information about the OS  |
-| `ps`                  | Process status. Usefull flags, settings: `-A`, `aux`  |
-| `env`                 | Show environment variables  |
-| `sudo -l`             | Show commands current user is allowed to run as sudo  |
-| `id`                  | Provide information about the users privilege level and groups  |
-| `/etc/passwd`         | Can be used to discover users |
-| `history`             | Search through history. Maybe credentials can be found |
-| `ifconfig`            | Information about the network interfaces |
-| `netstat`             | Information about existing connections |
-| `find`                | Find files on the system |
+| Command               | Usecase                                                               |
+| --------------------- | --------------------------------------------------------------------- |
+| `hostname`            | Displays the hostname of the target machine                           |
+| `uname -a`            | Print system information and details about the kernel                 |
+| `/proc/version`       | Print system information and details about the kernel                 |
+| `/etc/issue`          | Information about the OS                                              |
+| `ps`                  | Process status. Usefull flags, settings: `-A`, `aux`                  |
+| `env`                 | Show environment variables                                            |
+| `sudo -l`             | Show commands current user is allowed to run as sudo                  |
+| `id`                  | Provide information about the users privilege level and groups        |
+| `/etc/passwd`         | Can be used to discover users                                         |
+| `history`             | Search through history. Maybe credentials can be found                |
+| `ifconfig`            | Information about the network interfaces                              |
+| `netstat`             | Information about existing connections                                |
+| `find`                | Find files on the system                                              |
+| `/etc/crontab`        | Contains cronjobs which are executed as the owner                     |
 
 
 ## Other commands
@@ -30,19 +31,17 @@
 
 ### find command
 
-(Use `2>/dev/null` to get rid of all the errors)
-
-* `find . -name flag1.txt` : find the file named “flag1.txt” in the current directory
-* `find / -type d -name config` : find the directory named config under “/”
-* `find / -type f -perm 0777` : find files with the 777 permissions (files readable, writable, and executable by all users)
-* `find / -perm a=x` : find executable files
-* `find /home -user frank` : find all files for user “frank” under “/home”
-* `find / -mtime 10` : find files that were modified in the last 10 days
-* `find / -atime 10` : find files that were accessed in the last 10 day
-* `find / -cmin -60` : find files changed within the last hour (60 minutes)
-* `find / -amin -60` : find files accesses within the last hour (60 minutes)
-* `find / -size 50M` : find files with a 50 MB size
-* `find / -size +50M` : find files with size larger than 50 MB
+* `find . -name flag1.txt 2>/dev/null` : find the file named “flag1.txt” in the current directory
+* `find / -type d -name config 2>/dev/null` : find the directory named config under “/”
+* `find / -type f -perm 0777 2>/dev/null` : find files with the 777 permissions (files readable, writable, and executable by all users)
+* `find / -perm a=x 2>/dev/null` : find executable files
+* `find /home -user frank 2>/dev/null` : find all files for user “frank” under “/home”
+* `find / -mtime 10 2>/dev/null` : find files that were modified in the last 10 days
+* `find / -atime 10 2>/dev/null` : find files that were accessed in the last 10 day
+* `find / -cmin -60 2>/dev/null` : find files changed within the last hour (60 minutes)
+* `find / -amin -60 2>/dev/null` : find files accesses within the last hour (60 minutes)
+* `find / -size 50M 2>/dev/null` : find files with a 50 MB size
+* `find / -size +50M 2>/dev/null` : find files with size larger than 50 MB
 * `find / -writable -type d  2>/dev/null` : Find world-writeable folders
 * `find / -perm -222 -type d 2>/dev/null` : Find world-writeable folders
 * `find / -perm -o w -type d 2>/dev/null` : Find world-writeable folders

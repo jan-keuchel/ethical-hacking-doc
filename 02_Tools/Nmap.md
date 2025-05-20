@@ -111,6 +111,8 @@ Examples:
 nmap -sC -sV <target>
 nmap --script=vuln <target>
 nmap --script=http-enum <target>
+nmap -p 445 --script=smb-enum-shares.nse,smb-enum-users.nse <target> # enumerate samba shares
+nmap -p 111 --script=nfs-ls,nfs-statfs,nfs-showmount MACHINE_IP # enumerate nfs
 ```
 
 ## Scan Examples

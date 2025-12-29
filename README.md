@@ -1,12 +1,6 @@
 # Pentesting & Ethical Hacking Notes
 
-Welcome to my personal notes on Pentesting and Ethical Hacking. This repository is structured to help me (and potentially others) navigate through theory, tools, techniques, and practical usage of common security concepts and utilities.
-
----
-
-## Structure Overview
-
-### 1. [Tools/](./02_Tools/)
+## 1. [Tools/](./02_Tools/)
 Notes, cheat sheets, and command usage examples.
 
 - [ffuf](./02_Tools/ffuf.md) – General purpose fuzzing tool.

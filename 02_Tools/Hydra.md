@@ -70,5 +70,4 @@ hydra -L users.txt -P passwords.txt -o results.txt ssh://192.168.1.100
 ## References
 
 * [Hydra GitHub Repository](https://github.com/vanhauser-thc/thc-hydra)
-* [THC Hydra Usage Guide (HackTricks)](https://book.hacktricks.xyz/pentesting/password-cracking/thc-hydra)
 * [SecLists – User/Password Wordlists](https://github.com/danielmiessler/SecLists)

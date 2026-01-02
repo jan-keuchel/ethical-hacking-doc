@@ -4,7 +4,8 @@
 
 ---
 
-## Module categories:
+## Basics
+### Module categories:
 - Auxiliary: Any supporting module, such as scanners, fuzzers.
 - Encoders: Encode payloads such that antivirus tools don't detect them.
 - Evasion: Helpers to void security measures
@@ -19,7 +20,7 @@
 
 (Singles are seperated by underscores ("_"), staged payloads are seperated by slashes ("/"))
 
-## Navigating
+### Navigating
 - Get information about selected module: `info`
 - Select a module: `use <module>` (e.g. `use exploit/windows/smb/ms17_010_eternalblue`)
 - leave exploit: `back`
@@ -27,16 +28,30 @@
 - list exploits/payloads etc.: `show [exploits|options|payloads|...]`
 - run the exploit: `[run|exploit]`
 
-## Searching
+### Searching
 - Only search for a specific module type: `search type:auxiliary telnet`
 
-## Options within a module
+### Options within a module
 - Set an option to a value: `set <option> <value>`
 - Unset the value: `unset <option>`
 - Unset all values: `unset all`
 - Set value of option globally: `setg <option> <value>`
 
-## Sessions
+### Sessions
 - If an exploit was successful, a session is created. This can be set to run in the background with `background` or `CTRL+Z`
 - All active sessions can be listed with `sessions`
 - Go back into a session with `sessions -i <num>`
+
+## Meterpreter
+### Basics
+- Runs in memory and is not stored on a disk to avoid being detected.
+- Uses encryption when communicating with the C2 server.
+
+### Commands
+- `getpid`: Get the process ID of the current process meterpreter is running as
+- `ps`: List running processes
+- `help`: Get all commands that are available in this session
+- `getuid`: Display the user with which meterpreter is running
+- `migrate <pid>`: Switch to another process
+- `hashdump`: List contents of SAM (Security Account Manager) database; password hashes etc.
+- `shell`: Launch regular command line shell

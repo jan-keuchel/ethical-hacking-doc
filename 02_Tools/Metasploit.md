@@ -30,6 +30,7 @@
 
 ### Searching
 - Only search for a specific module type: `search type:auxiliary telnet`
+- Grepping for specific words in search: `grep <string> search <search-string>`
 
 ### Options within a module
 - Set an option to a value: `set <option> <value>`

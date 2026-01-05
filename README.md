@@ -2,6 +2,7 @@
 
 ## 1. [Theory/](./01_Theory/)
 - [Linux PrivEsc](./01_Theory/Enumeration_PrivEsc.md)
+- [Windows Basics](./01_Theory/Windows_Basics.md)
 
 ## 2. [Tools/](./02_Tools/)
 - [ffuf](./02_Tools/ffuf.md) - General purpose fuzzing tool.

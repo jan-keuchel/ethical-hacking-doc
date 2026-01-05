@@ -56,3 +56,9 @@
 - `migrate <pid>`: Switch to another process
 - `hashdump`: List contents of SAM (Security Account Manager) database; password hashes etc.
 - `shell`: Launch regular command line shell
+
+## msfvenom
+Payload generation
+
+### Commands
+- `msfvenom --list formats`: List all available format types

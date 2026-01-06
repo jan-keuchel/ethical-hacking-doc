@@ -11,6 +11,7 @@
 - [Metasploit](./02_Tools/Metasploit.md) - Command and Control framework
 - [Nmap](./02_Tools/Nmap.md) - Network mapping, port scanning, service detection.
 - [Online tools](./02_Tools/OnlineTools.md) - Collection of usefull oneline tools.
+- [PowerShell](./02_Tools/PowerShell.md) - Windows PowerShell
 
 ## 3. [Workflow/](./03_Workflow/)
 - [Recon](./03_Workflow/Recon.md)

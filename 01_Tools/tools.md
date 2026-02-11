@@ -6,8 +6,11 @@
 ## Nmap
 * [Nmap behavior](#nmap-behavior)
 * [Host discovery](#host-discovery)
+* [Port scanning](#port-scanning)
 
 ### Nmap behavior
+
+#### Running nmap privileged or unprivileged
 - privileged user on local network: ARP request
 - privileged user outside local network: ICMP echo request, ICMP timestamp request, TCP ACK and TCP SYN
 - unprivileged user outside local netowrk: TCP 3WH
@@ -17,7 +20,7 @@
 #### ARP
 ```bash
 # Don't do port scan
-nmap -sn TARGETS 
+nmap -sn TARGETS
 
 # ARP scan
 nmap -PR -sn TARGETS
@@ -57,5 +60,17 @@ sudo nmap -PA443 -sn TARGETS
 # Expects a ICMP port unreachable if port is closed: Host up
 sudo nmap -PU -sn TARGETS 
 ```
+
+### Port scanning
+
+#### Port states
+| State | Meaning|
+|-------|--------|
+| **Open** | Service is listening on the port |
+| **Closed** | No service is listening on the port, not blocked by firewall. |
+| **Filtered** | Nmap can't say if it's open or closed. Blocked by firewall. |
+| **Unfiltered** | Nmap can't say if it's open or closed. Not blocked by firewall. |
+| **Open\|Filtered** | Nmap can't say if it's open or filtered. |
+| **Closed\|Filtered** | Nmap can't say if it's closed or filtered. |
 
 ## ffuf

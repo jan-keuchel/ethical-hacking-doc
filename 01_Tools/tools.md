@@ -95,7 +95,7 @@ sudo nmap -sU TARGET
 
 #### Specific scans
 
-##### Usefull against a **stateless** firewall: Null, FIN and Xmas
+##### Usefull against a stateless firewall: Null, FIN and Xmas
 ```bash
 # Null scan
 # No flags are set. Won't trigger response.
@@ -112,6 +112,22 @@ sudo nmap -sX TARGET
 # All scans won't trigger a response.
 # All scans expect a RST flag if the port is closed.
 # No answer -> open|filtered
+```
+
+##### Get information about firewall configuration: ACK and Window scan
+```bash
+# ACK
+# Expects a RST packet if port is not blocked by firewall -> unfiltered
+# Expects no response / ICMP unreachable if blocked by firewall -> filtered
+sudo nmap -sA TARGET
+
+# Window
+# Sends identical packet to ACK scan but examins the Window option of 
+# the RST response.
+# TCP RST with non-zero Window field -> open
+# TCP RST with zero Window field -> closed
+# No response/ICMP unreachable -> filtered
+sudo nmap -sW TARGET
 ```
 
 ## ffuf

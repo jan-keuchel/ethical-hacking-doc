@@ -16,38 +16,46 @@
 
 #### ARP
 ```bash
-nmap -sn TARGETS # Don't do port scan
+# Don't do port scan
+nmap -sn TARGETS 
 
-nmap -PR -sn TARGETS # ARP scan
+# ARP scan
+nmap -PR -sn TARGETS
 ```
 
 #### ICMP
 ```bash
 # Most systems block echo requests: not reliable
-nmap -PE -sn TARGETS # ICMP echo request
+# ICMP echo request
+nmap -PE -sn TARGETS
 
 # Blocked less frequently than ICMP echo requests
-nmap -PP -sn TARGETS # ICMP timestamp request
+# ICMP timestamp request
+nmap -PP -sn TARGETS
 
 # Blocked less frequently than ICMP echo requests
-nmap -PM -sn TARGETS # ICMP address mask request
+# ICMP address mask request
+nmap -PM -sn TARGETS
 ```
 
 #### TCP and UDP
 ```bash
-nmap -PS21-25 -sn TARGETS # SYN scan (3WH, unprivileged)
+# SYN scan (3WH, unprivileged)
+nmap -PS21-25 -sn TARGETS
 
 # Doesn't complete the entire 3WH
-sudo nmap -PS80,443,8080 -sn TARGETS # SYN scan (SYN-RST, privileged)
+# SYN scan (SYN-RST, privileged)
+sudo nmap -PS80,443,8080 -sn TARGETS
 
 # Default port is 80
 # Unprivileged user would complete 3WH
-sudo nmap -PA443 -sn TARGETS # TCP ACK Ping (expects a RST as response)
+# TCP ACK Ping (expects a RST as response)
+sudo nmap -PA443 -sn TARGETS
 
 # UDP Ping doesn't expect a response if port is open.
 # Could be blocked by firewall: No response -> might be up
 # Expects a ICMP port unreachable if port is closed: Host up
-sudo nmap -PU -sn TARGETS # UDP Ping
+sudo nmap -PU -sn TARGETS 
 ```
 
 ## ffuf

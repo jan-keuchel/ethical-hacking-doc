@@ -4,6 +4,8 @@
 * [ffuf](#ffuf)
 
 ## Nmap
+* [Nmap behavior](#nmap-behavior)
+* [Host discovery](#host-discovery)
 
 ### Nmap behavior
 - privileged user on local network: ARP request

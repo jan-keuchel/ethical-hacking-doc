@@ -11,9 +11,12 @@
 ### Nmap behavior
 
 #### Running nmap privileged or unprivileged
-- privileged user on local network: ARP request
-- privileged user outside local network: ICMP echo request, ICMP timestamp request, TCP ACK and TCP SYN
-- unprivileged user outside local netowrk: TCP 3WH
+* privileged user on local network: ARP request
+* privileged user outside local network: ICMP echo request, ICMP timestamp request, TCP ACK and TCP SYN
+* unprivileged user outside local netowrk: TCP 3WH
+
+#### Useful options
+* `-F` Fast mode. Only scan top 100 ports instead of top 1000.
 
 ### Host discovery
 
@@ -72,5 +75,22 @@ sudo nmap -PU -sn TARGETS
 | **Unfiltered** | Nmap can't say if it's open or closed. Not blocked by firewall. |
 | **Open\|Filtered** | Nmap can't say if it's open or filtered. |
 | **Closed\|Filtered** | Nmap can't say if it's closed or filtered. |
+
+#### Scanning
+
+```bash
+# TCP Connect Scan
+# Complete a 3WH, then send a RST,ACK flag to terminate connection
+nmap -sT TARGET
+
+# TCP SYN Scan
+# Terminate the 3WH after receiving SYN,ACK
+sudo nmap -sS TARGET
+
+# UDP Scan
+# Open UDP ports don't always replay.
+# Closed UDP ports answer with an ICMP port unreachable packet.
+sudo nmap -sU TARGET
+```
 
 ## ffuf

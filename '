@@ -95,7 +95,7 @@ sudo nmap -sU TARGET
 
 #### Specific scans
 
-##### Usefull against a **stateless** firewall: Null, FIN and Xmas
+##### Usefull against a **stateless** firewall
 ```bash
 # Null scan
 # No flags are set. Won't trigger response.

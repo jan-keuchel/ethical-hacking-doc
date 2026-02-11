@@ -1,17 +1,7 @@
-# Pentesting & Ethical Hacking Notes
+# Pentesting Notes
 
-## 1. [Theory/](./01_Theory/)
-- [Linux PrivEsc](./01_Theory/Enumeration_PrivEsc.md)
-- [Windows Basics](./01_Theory/Windows_Basics.md)
+## 1. [Tools/](./01_Tools/)
+- [Tools](./01_Tools/tools.md)
 
-## 2. [Tools/](./02_Tools/)
-- [ffuf](./02_Tools/ffuf.md) - General purpose fuzzing tool.
-- [Hydra](./02_Tools/Hydra.md) - Password attack.
-- [John](./02_Tools/John.md) - Password attack.
-- [Metasploit](./02_Tools/Metasploit.md) - Command and Control framework
-- [Nmap](./02_Tools/Nmap.md) - Network mapping, port scanning, service detection.
-- [Online tools](./02_Tools/OnlineTools.md) - Collection of usefull oneline tools.
-- [PowerShell](./02_Tools/PowerShell.md) - Windows PowerShell
-
-## 3. [Workflow/](./03_Workflow/)
-- [Recon](./03_Workflow/Recon.md)
+## 2. [Workflow/](./02_Workflow/)
+- [Linux PrivEsc](./02_Workflow/Linux_PrivEsc.md)

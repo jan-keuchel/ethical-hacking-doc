@@ -2,6 +2,7 @@
 
 * [Nmap](#Nmap)
 * [ffuf](#ffuf)
+* [pop3](#pop3)
 
 ## Nmap
 * [Nmap behavior](#nmap-behavior)
@@ -76,6 +77,12 @@ sudo nmap -PU -sn TARGETS
 | **Open\|Filtered** | Nmap can't say if it's open or filtered. |
 | **Closed\|Filtered** | Nmap can't say if it's closed or filtered. |
 
+#### Examples
+```bash
+# Version detection, OS detection, all ports, fast packets, verbose
+nmap -T4 -A -p- -v $IP
+```
+
 #### Basic scanning
 
 ```bash
@@ -131,3 +138,59 @@ sudo nmap -sW TARGET
 ```
 
 ## ffuf
+
+### Basics
+
+- The 'FUZZ' keyword is used to tell ffuf where to insert the wordlist items.
+- The `-u <url>` and `-w <wordlist>` arguments are required.
+
+### Syntax
+
+```bash
+ffuf -w [wordlist] -u [target_URL] [commands]                   # Basic 
+ffuf -w wordlist1:W1,wordlist2:W2 -u [target_URL] [commands]    # Use multiple wordlists
+```
+
+### Frequently used flags
+- `-c` colored output
+- `-H` Header `<name>: <value>`
+- `m[clrstw]` match (Filter out everything except for those responses that match the criterea) **C**ode, number of **L**ines, **R**egEx, HTTP Response **S**ize, **M**illiseconds to first response, Number of **W**ords in response
+- `f[clrstw]` filter (Filter out response that matches the criterea) **C**ode, number of **L**ines, **R**egEx, HTTP Response **S**ize, **M**illiseconds to first response, Number of **W**ords in response
+- `-v` verbose
+
+### Examples
+
+```bash
+# Directory fuzzing
+ffuf -u http://$IP:PORT/FUZZ -w wordlist.txt
+
+# Multiple wordlists
+ffuf -u http://W1.$IP:PORT/W2 -w /usr/share/wordlists/SecLists/Discovery/Web-Content/big.txt:W1,/usr/share/wordlists/SecLists/Discovery/Web-Content/quickhits.txt:W2
+
+# VHost discovery
+ffuf -u http://$IP -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H 'Host: FUZZ.lookup.thm' -c -fs 0
+```
+
+## POP3
+
+### Connecting and authentication
+```bash
+# Connect to the service
+nc $IP <port>
+
+# Authenticate
+USER <username>
+PASS <password>
+
+# List messages
+LIST
+
+# Get/Modify messages
+RETR <ID>
+DELE <ID>
+
+# Exit
+QUIT
+```
+
+## Hydra

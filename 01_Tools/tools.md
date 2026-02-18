@@ -171,9 +171,9 @@ ffuf -u http://W1.$IP:PORT/W2 -w /usr/share/wordlists/SecLists/Discovery/Web-Con
 ffuf -u http://$IP -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H 'Host: FUZZ.lookup.thm' -c -fs 0
 ```
 
-## POP3
-
-### Connecting and authentication
+## Mail
+### POP3
+#### Connecting and authentication
 ```bash
 # Connect to the service
 nc $IP <port>
@@ -193,4 +193,25 @@ DELE <ID>
 QUIT
 ```
 
+### SMTP
+```bash
+# Connect to the service
+nc $IP <port>
+```
+
+
 ## Hydra
+
+### Basic information
+- **`-l/-L`**: specify login name or list of names
+- **`-p/-P`**: specify password or wordlist
+- **`-s`**: specify port
+- **`-S`**: Connect vai SSL
+- **`-V`**: Show every attempt
+- **`-I`**: Skip waiting at the beginning
+
+### Examples
+```bash
+# POP3
+hydra -l LOGIN -P WORDLIST -s PORT $IP pop3
+```

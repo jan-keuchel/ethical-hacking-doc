@@ -221,7 +221,34 @@ nc $IP <port>
 - **`-u`**: Switch from DFS to BFS
 
 ### Examples
+#### POP3
 ```bash
-# POP3
 hydra -l LOGIN -P WORDLIST -s PORT $IP pop3
+```
+
+#### ssh
+```bash
+hydra -l LOGIN -P WORDLIST -s PORT $IP ssh
+```
+
+## Hashcat
+
+```bash
+hashcat [options] -m [hash_type] -a [attack_mode] [hash_file] [wordlist|mask]
+```
+
+### Examples
+#### Salted md5 hash dictionary attack
+- Create file with the format `PASS:SALT`
+- Attack:
+```bash
+hashcat -m 10 -a 0 hash_file WORDLIST
+```
+
+## Gobuster
+
+### Directory fuzzing
+```bash
+# Fuzz for basic directories
+gobuster dir -w /usr/share/wordlists/dirbuster/list -u http://$IP
 ```

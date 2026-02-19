@@ -2,7 +2,10 @@
 
 * [Nmap](#Nmap)
 * [ffuf](#ffuf)
-* [pop3](#pop3)
+* [Mail](#mail)
+* [Hydra](#hydra)
+* [Hashcat](#hashcat)
+* [Gobuster](#gobuster)
 
 ## Nmap
 * [Nmap behavior](#nmap-behavior)
@@ -236,6 +239,14 @@ hydra -l LOGIN -P WORDLIST -s PORT $IP ssh
 ```bash
 hashcat [options] -m [hash_type] -a [attack_mode] [hash_file] [wordlist|mask]
 ```
+- Find hash types at `man hashcat` search for `Hash types`
+
+### Attack modes
+| NUM | Mode |
+|-----|------|
+|0| Dictionary|
+|1| Combinaton (combine words of two wordlists)|
+|3| Brute-force|
 
 ### Examples
 #### Salted md5 hash dictionary attack

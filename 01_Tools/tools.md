@@ -80,7 +80,7 @@ sudo nmap -PU -sn TARGETS
 #### Examples
 ```bash
 # Version detection, OS detection, all ports, fast packets, verbose
-nmap -T4 -A -p- -v $IP
+nmap -T4 -A -p- -Pn -v $IP
 ```
 
 #### Basic scanning
@@ -135,6 +135,15 @@ sudo nmap -sA TARGET
 # TCP RST with zero Window field -> closed
 # No response/ICMP unreachable -> filtered
 sudo nmap -sW TARGET
+```
+
+#### NSE
+```
+# Search for scripts
+ls -l /usr/share/nmap/scripts | grep <search-term>
+
+# Get basic information about the script
+nmap --script-help <script>
 ```
 
 ## ffuf
@@ -206,9 +215,10 @@ nc $IP <port>
 - **`-l/-L`**: specify login name or list of names
 - **`-p/-P`**: specify password or wordlist
 - **`-s`**: specify port
-- **`-S`**: Connect vai SSL
+- **`-S`**: Connect via SSL
 - **`-V`**: Show every attempt
 - **`-I`**: Skip waiting at the beginning
+- **`-u`**: Switch from DFS to BFS
 
 ### Examples
 ```bash

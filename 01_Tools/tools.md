@@ -225,22 +225,27 @@ nc $IP <port>
 - **`-V`**: Show every attempt
 - **`-I`**: Skip waiting at the beginning
 - **`-u`**: Switch from DFS to BFS
+- **`-h`**: Show help menu. Also lists available protocols
+- **`-U MODULE`**: Show further information on a module
 
 ### Examples
-#### POP3
+#### Protocols
+- pop3, ssh, ftp
 ```bash
-hydra -l LOGIN -P WORDLIST -s PORT $IP pop3
+hydra -l LOGIN -P WORDLIST -s PORT $IP PROTOCOL
 ```
 
-#### ssh
-```bash
-hydra -l LOGIN -P WORDLIST -s PORT $IP ssh
-```
+#### HTTP form
+- HTTP POST form
+    ```bash
+    hydra -l USER -P WORDLIST $IP http-post-form "PATH:BODY:F=FAILURE_STRING"
+    ```
+    - Intercept the request with Bursp Suite
+    - Use the resource path as `PATH`. Without additional parameters.
+    - Copy the Body into `BODY` and exchange the username and password for `^USER^` and `^PASS^`
+    - Forward the request and look at the error message: use as `FAILURE_STRING`
+    - If the Success message is known specify instead of `F` with `S=SUCCESS_STRING`
 
-#### FTP
-```bash
-hydra -l LOGIN -P WORDLIST -s PORT $IP ftp
-```
 
 ## Hashcat
 

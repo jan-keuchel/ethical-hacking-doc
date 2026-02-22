@@ -82,6 +82,9 @@ sudo nmap -PU -sn TARGETS
 
 #### Examples
 ```bash
+# First broad scan to detect open ports
+nmap -T4 -p- -Pn $IP
+
 # Version detection, OS detection, all ports, fast packets, verbose
 nmap -T4 -A -p- -Pn -v $IP
 ```
@@ -234,6 +237,11 @@ hydra -l LOGIN -P WORDLIST -s PORT $IP pop3
 hydra -l LOGIN -P WORDLIST -s PORT $IP ssh
 ```
 
+#### FTP
+```bash
+hydra -l LOGIN -P WORDLIST -s PORT $IP ftp
+```
+
 ## Hashcat
 
 ```bash
@@ -254,6 +262,17 @@ hashcat [options] -m [hash_type] -a [attack_mode] [hash_file] [wordlist|mask]
 - Attack:
 ```bash
 hashcat -m 10 -a 0 hash_file WORDLIST
+```
+
+## John
+
+### Cracking encrypted zip files
+```bash
+# Create a hash for John
+zip2john ZIP_FILE > hash
+
+# Brute-force
+john --wordlist=WORDLIST hash
 ```
 
 ## Gobuster

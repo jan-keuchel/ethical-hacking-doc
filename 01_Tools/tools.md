@@ -5,7 +5,10 @@
 * [Mail](#mail)
 * [Hydra](#hydra)
 * [Hashcat](#hashcat)
+* [John](#john)
 * [Gobuster](#gobuster)
+* [smbclient](#smbclient)
+* [smbmap](#smbmap)
 
 ## Nmap
 * [Nmap behavior](#nmap-behavior)
@@ -228,11 +231,16 @@ nc $IP <port>
 - **`-h`**: Show help menu. Also lists available protocols
 - **`-U MODULE`**: Show further information on a module
 
-### Examples
+### Usage against protocols
 #### Protocols
 - pop3, ssh, ftp
 ```bash
 hydra -l LOGIN -P WORDLIST -s PORT $IP PROTOCOL
+```
+
+#### SMB shares
+```bash
+hydra -l LOGIN -P WORDLIST -s PORT smb://$IP/SHARE
 ```
 
 #### HTTP form
@@ -286,4 +294,28 @@ john --wordlist=WORDLIST hash
 ```bash
 # Fuzz for basic directories
 gobuster dir -w /usr/share/wordlists/dirbuster/list -u http://$IP
+```
+
+## SMB
+
+### smbclient CLI use
+```bash
+# Login
+smbclient //$IP/SHARE_NAME -U USERNAME -p PORT
+
+# List shares anonymously
+smbclient -L //target.com -U anonymous
+```
+
+## smbmap
+
+```bash
+# Basic Share enumeration
+smbmap -H $IP
+
+# With credentials
+smbmap -H target.com -u username -p password
+
+# Recursive enumeration
+smbmap -H target.com -u username -p password -r
 ```

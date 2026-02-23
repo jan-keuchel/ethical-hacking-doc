@@ -7,6 +7,7 @@
     - `/usr/share/wordlists/rockyou.txt`
     - `/usr/share/wordlists/fasttrack.txt`
     - `/usr/share/seclists/Passwords/Common-Credentials/best110.txt`
+- Try different failure or success conditions
 
 ### Enumeration
 - Scan all ports with `nmap`

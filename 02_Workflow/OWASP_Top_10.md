@@ -2,8 +2,14 @@
 
 ## [A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/) (IAAA)
 
-### Describtion
-Users are able to access information outside of their intended permissions.
+### Description
+Users are able to access information outside of their intended permissions. Put differently: The server doesn't enfoce who can access what on every request. Example is IDOR.
+
+#### IDOR
+Example URL: `https://example.com/accounts?id=42`. If the ID isn't verified on each request, one can view data of other accounts
+
+### What to do about it
+- Enfore server-side checks on __every__ request
 
 ## A02 Security Misconfiguration
 
@@ -15,11 +21,30 @@ Users are able to access information outside of their intended permissions.
 
 ## A06 Insecure Design
 
-## A07 Authentication Failures (IAAA)
+## [A07 Authentication Failures](https://owasp.org/Top10/2025/A07_2025-Authentication_Failures/) (IAAA)
+
+### Description
+The server isn't able to properly verify the users identity. This leads to:
+- username enumeration
+- brute-forceable logins (because of missing lockout / rate limiting)
+- logic flags in login or registration flow
+- insecure session or cookie handling
+
+### What to do about it
+- Unique indexes (No duplicate usernames)
+- Rate-limiting, lock out policy on brute-force
+- Invalidate sessions on password or privilege changes
 
 ## A08 Software or Data Integrity Failures
 
-## A09 Security Logging and Alerting Failures (IAAA)
+## [A09 Security Logging and Alerting Failures](https://owasp.org/Top10/2025/A09_2025-Security_Logging_and_Alerting_Failures/) (IAAA)
+
+### Description
+If there are no alerts about possible attacks, defenders can't do their work. Accountability is important (logging).
+
+### What to do about it
+- Log full authentication lifecycle (fail/success, password/2FA, actions)
+- Alert on anomalies (brute-force, PrivEsc)
 
 ## A10 Mishandling of Exceptional Conditions
 

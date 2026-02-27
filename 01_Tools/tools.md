@@ -175,6 +175,8 @@ ffuf -w wordlist1:W1,wordlist2:W2 -u [target_URL] [commands]    # Use multiple w
 - `m[clrstw]` match (Filter out everything except for those responses that match the criterea) **C**ode, number of **L**ines, **R**egEx, HTTP Response **S**ize, **M**illiseconds to first response, Number of **W**ords in response
 - `f[clrstw]` filter (Filter out response that matches the criterea) **C**ode, number of **L**ines, **R**egEx, HTTP Response **S**ize, **M**illiseconds to first response, Number of **W**ords in response
 - `-v` verbose
+- `-o` specify output file
+- `-of` specify output format (json, md, html, ...)
 
 ### Examples
 
@@ -188,6 +190,12 @@ ffuf -u http://W1.$IP:PORT/W2 -w /usr/share/wordlists/SecLists/Discovery/Web-Con
 # VHost discovery
 ffuf -u http://$IP -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H 'Host: FUZZ.lookup.thm' -c -fs 0
 ```
+
+### Fuzzing with HTTP POST request
+- **`-X`**: Specify the request method (e.g. `GET`, `POST`)
+- **`-d`**: Data to be sent (body of HTTP packet). Capture packet using BurpSuite, then modify.
+- **`-H`**: Header values. (Use BurpSuite)
+    - e.g. `-H "Content-Type: application/x-www-form-urlencoded"`
 
 ## Mail
 ### POP3

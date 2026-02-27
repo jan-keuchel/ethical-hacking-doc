@@ -3,13 +3,26 @@
 ## [A01 Broken Access Control](https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/) (IAAA)
 
 ### Description
-Users are able to access information outside of their intended permissions. Put differently: The server doesn't enfoce who can access what on every request. Example is IDOR.
+Users are able to access information outside of their intended permissions.
+Put differently: The server doesn't enfoce who can access what on every request.
+An example could be IDOR.
+Basically, the user input is not verified and instead blindly trusted.
 
 #### IDOR
 Example URL: `https://example.com/accounts?id=42`. If the ID isn't verified on each request, one can view data of other accounts
 
 ### What to do about it
 - Enfore server-side checks on __every__ request
+
+### How do find BAC vulnerabilities
+- Capture relevant packages with BurpSuite
+    - Registration
+    - Login
+- Look for redirects and sent parameters.
+    - Send the packet to repeater and play round with the values
+- Go to the netowrking tab in the browser and refresh the page
+    - Look for calls to APIs with paramaeters given
+    - Get the URL and manually modify the values
 
 ## A02 Security Misconfiguration
 

@@ -319,3 +319,22 @@ smbmap -H target.com -u username -p password
 # Recursive enumeration
 smbmap -H target.com -u username -p password -r
 ```
+
+## SQL
+
+### MySql
+
+#### Basic usage
+```bash
+# Start mysql
+mysql -u USER -p
+
+# List all databases
+show databases;
+
+# Select a database to use
+use DATABASE
+
+# Get tables inside database
+show tables;
+```

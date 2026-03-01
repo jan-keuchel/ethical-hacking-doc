@@ -189,6 +189,9 @@ ffuf -u http://W1.$IP:PORT/W2 -w /usr/share/wordlists/SecLists/Discovery/Web-Con
 
 # VHost discovery
 ffuf -u http://$IP -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-20000.txt -H 'Host: FUZZ.lookup.thm' -c -fs 0
+
+# Email enumeration
+ffuf -w usernames_gmail.com.txt -X POST -d "username=FUZZ&password=x&func-u http://enum.thm/labs/verbose_login/functions.php -mr "Invalid password"
 ```
 
 ### Fuzzing with HTTP POST request

